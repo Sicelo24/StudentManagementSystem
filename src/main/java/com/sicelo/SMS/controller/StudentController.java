@@ -31,7 +31,6 @@ public class StudentController {
         return "create_student";
     }
 
-    //Save
     @PostMapping("/students")
     public String saveStudent(@ModelAttribute("student") Student student){
         if (studentService.storedEmailDetails(student.getEmail())!=null){
@@ -48,7 +47,6 @@ public class StudentController {
         return "edit_student";
     }
 
-    //Update
     @PostMapping("/students/{id}")
     public String updateStudent(@PathVariable Long id,
                                 @ModelAttribute("student") Student student,
